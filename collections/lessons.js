@@ -1,4 +1,8 @@
-Lessons = new Meteor.Collection('lessons');
+Lessons = new Mongo.Collection('lessons');
+
+Lessons.allow({
+  insert: function(){return true}
+})
 
 LessonsShema = new SimpleSchema({
   title: {
@@ -12,8 +16,11 @@ LessonsShema = new SimpleSchema({
   createdAt: {
     type: Date,
     label: 'Creation Date',
-    autoValue: function(){
+    autoValue: function() {
       return new Date();
+    },
+    autoform: {
+      type: 'hidden'
     }
   }
 });

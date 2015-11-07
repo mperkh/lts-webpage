@@ -10,3 +10,9 @@
 <template name="Test">
   HELLO WORLD
 </template>
+
+<template name="Lessons">
+  <div class="new-lessons-conatiner">
+    {{> quickForm collection="Lessons" id="insertLesson" type="insert" class="new-lesson-form"}}
+  </div>
+</template>
